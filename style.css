@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 20px 0 10px;
+}
+
+.timer {
+  font-size: 48px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.controls button,
+#task-form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover,
+#task-form button:hover {
+  background-color: #5a54d1;
+}
+
+#task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#task-list {
+  list-style: none;
+}
+
+#task-list li {
+  background: #eef1f8;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#task-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode .container {
+  background: #1e1e1e;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark-mode #task-list li {
+  background: #2a2a2a;
+  color: #ddd;
+}
+
+body.dark-mode #task-list li.completed {
+  color: #777;
+}
+
+.small-btn {
+  margin: 10px auto;
+  display: block;
+  font-size: 14px;
+  padding: 6px 10px;
+  background-color: #ff7675;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.small-btn:hover {
+  background-color: #e74c3c;
+}
+
+.config-times {
+  background: #eef1f8;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.config-times label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.config-times input {
+  width: 60px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.config-times button {
+  padding: 8px 12px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.config-times button:hover {
+  background-color: #5a54d1;
+}
+
+body.dark-mode .config-times {
+  background: #2a2a2a;
+}
+
+body.dark-mode .config-times label {
+  color: #ddd;
+}
+
+body.dark-mode .config-times input {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+/* Estado selector */
+.status-selector {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.status-selector label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.status-selector select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.status-selector select:hover {
+  border-color: #6c63ff;
+}
+
+body.dark-mode .status-selector select {
+  background: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+/* Indicador de estado */
+.state-indicator {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ffe3e3;
+  color: #c0392b;
+}
+
+/* Estados de pomodoro */
+body.state-work .state-indicator {
+  background: #ffe3e3;
+  color: #c0392b;
+}
+body.state-short .state-indicator {
+  background: #e3f8e3;
+  color: #27ae60;
+}
+body.state-long .state-indicator {
+  background: #e3ecff;
+  color: #2980b9;
+}

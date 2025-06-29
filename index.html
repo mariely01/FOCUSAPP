@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusApp - Lista de tareas con Pomodoro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+  <div class="container">
+    <!-- Encabezado -->
+    <div class="header">
+      <h1>🍅 FocusApp</h1>
+      <button id="toggle-dark-mode">🌙 Modo Oscuro</button>
+    </div>
+
+    <!-- Selector de estado -->
+    <div class="status-selector">
+      <label for="custom-status">Estado actual:</label>
+      <select id="custom-status">
+        <option value="trabajo">🧑‍💻 Trabajo</option>
+        <option value="casa">🏠 En casa</option>
+        <option value="estudiando">📚 Estudiando</option>
+        <option value="descanso">😌 Descansando</option>
+        <option value="ocupado">🚫 No disponible</option>
+      </select>
+    </div>
+
+    <!-- Configuración de tiempos -->
+    <div class="config-times">
+      <h3>Configuración de tiempos</h3>
+      <label for="input-work">Pomodoro (min): 
+        <input type="number" id="input-work" min="1" max="120" value="25" />
+      </label>
+      <label for="input-short-break">Descanso corto (min): 
+        <input type="number" id="input-short-break" min="1" max="30" value="5" />
+      </label>
+      <label for="input-long-break">Descanso largo (min): 
+        <input type="number" id="input-long-break" min="1" max="60" value="15" />
+      </label>
+      <button id="save-times">Guardar tiempos</button>
+    </div>
+
+    <!-- Temporizador Pomodoro -->
+    <div class="pomodoro">
+      <h2>Temporizador Pomodoro</h2>
+      <div class="timer" id="timer">25:00</div>
+      <p id="cycles">Ciclos completados: 0 🍅</p>
+      <button id="reset-cycles" class="small-btn">🔄 Reiniciar ciclos</button>
+
+      <div class="controls">
+        <button id="start">Iniciar</button>
+        <button id="pause">Pausar</button>
+        <button id="reset">Reiniciar</button>
+      </div>
+    </div>
+
+    <!-- Lista de Tareas -->
+    <div class="tasks">
+      <h2>Lista de Tareas</h2>
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Escribe una tarea..." required />
+        <button type="submit">Agregar</button>
+      </form>
+      <ul id="task-list"></ul>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="stats">
+      <h2>Estadísticas</h2>
+      <p id="total-cycles">Ciclos completados: 0</p>
+      <p id="total-work-time">Tiempo trabajado: 0 min</p>
+      <p id="total-break-time">Tiempo de descanso: 0 min</p>
+    </div>
+
+  </div>
+
+  <audio id="ding-sound" src="ding.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
